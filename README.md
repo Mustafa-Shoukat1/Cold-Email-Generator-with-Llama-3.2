@@ -31,4 +31,5 @@ Cold email generator for services companies using Groq, Langchain, Streamlit, an
 - [GitHub](https://github.com/mustafashoukat) | 💻
 - [Twitter](https://twitter.com/mustafashoukat) | 🐦
 - [Email](mailto:mustafa@example.com) | 📧
+![image](https://github.com/user-attachments/assets/75749cf8-5ea7-456a-b41c-c2282669550b)
 
