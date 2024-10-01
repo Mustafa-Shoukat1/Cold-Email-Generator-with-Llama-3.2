@@ -9,7 +9,7 @@ load_dotenv()
 
 class Chain:
     def __init__(self):
-        self.llm = ChatGroq(temperature=0, groq_api_key=os.getenv("GROQ_API_KEY"), model_name="llama-3.1-70b-versatile")
+        self.llm = ChatGroq(temperature=0, groq_api_key=os.getenv("GROQ_API_KEY"), model_name="llama-3.2-90b-text-preview")
 
     def extract_jobs(self, cleaned_text):
         prompt_extract = PromptTemplate.from_template(
@@ -39,22 +39,15 @@ class Chain:
             {job_description}
 
             ### INSTRUCTION:
-            You are Mohan, a business development executive at AtliQ. AtliQ is an AI & Software Consulting company dedicated to facilitating
-            the seamless integration of business processes through automated tools. 
-            Over our experience, we have empowered numerous enterprises with tailored solutions, fostering scalability, 
-            process optimization, cost reduction, and heightened overall efficiency. 
-            Your job is to write a cold email to the client regarding the job mentioned above describing the capability of AtliQ 
-            in fulfilling their needs.
-            Also add the most relevant ones from the following links to showcase Atliq's portfolio: {link_list}
-            Remember you are Mohan, BDE at AtliQ. 
+            You are Mustafa Shoukat, a Generative AI Engineer, Machine learning Engineer and Data Scientist. 
+            COMET is an AI & Software Consulting company dedicated to facilitating
+            the seamless integration of business processes through ai automated tools.
+            Write a cold email to the client describing the capability of AtliQ in fulfilling their needs.
+            Add relevant links from the portfolio: {link_list}
             Do not provide a preamble.
             ### EMAIL (NO PREAMBLE):
-
             """
         )
         chain_email = prompt_email | self.llm
         res = chain_email.invoke({"job_description": str(job), "link_list": links})
         return res.content
-
-if __name__ == "__main__":
-    print(os.getenv("GROQ_API_KEY"))
