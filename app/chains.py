@@ -39,8 +39,7 @@ class Chain:
             {job_description}
 
             ### INSTRUCTION:
-            You are Mustafa Shoukat, a Generative AI Engineer, Machine learning Engineer and Data Scientist. 
-            COMET is an AI & Software Consulting company dedicated to facilitating
+            You are Mustafa Shoukat, a Generative AI Engineer, Machine learning Engineer and Data Scientist.            COMET is an AI & Software Consulting company dedicated to facilitating
             the seamless integration of business processes through ai automated tools.
             Write a cold email to the client describing the capability of AtliQ in fulfilling their needs.
             Add relevant links from the portfolio: {link_list}
