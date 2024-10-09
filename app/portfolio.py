@@ -2,7 +2,6 @@ import pandas as pd
 import chromadb
 import uuid
 
-
 class Portfolio:
     def __init__(self, file_path="app/resource/my_portfolio.csv"):
         self.file_path = file_path
@@ -19,4 +18,3 @@ class Portfolio:
 
     def query_links(self, skills):
         return self.collection.query(query_texts=skills, n_results=2).get('metadatas', [])
-    
